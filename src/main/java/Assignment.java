@@ -7,10 +7,12 @@ public class Assignment {
     public static final Scanner scanner = new Scanner(System.in);
     
     public static void main(String[] args) {
-      String repeated = repeatWord("", 0);
+      String repeated = repeatWord("Hello", 3);
       System.out.println(repeated);
-      String pyramid = createPyramid(0);
-      String FizzBuzz = countTo(3);
+      String pyramid = createPyramid(3);
+      System.out.println(pyramid);
+      String FizzBuzz = countTo(16);
+      System.out.println(FizzBuzz);
       
     }
     
@@ -25,7 +27,18 @@ public class Assignment {
         // Use a while loop to build a string that repeats the word
         // Words should be separated by single spaces
         // No trailing space at the end
-        return "test";
+        String Repeatedword = word;
+        if(times == 0) {
+            return "";
+        }
+
+        while(times > 1) {
+
+            Repeatedword = Repeatedword + " " + word;
+            times--;
+            
+        }
+        return Repeatedword;
 
     
     }
@@ -44,7 +57,29 @@ public class Assignment {
         // - Outer loop for each row
         // - Inner loop to repeat the number
         // Use \n for newlines
-        return "";
+        String pyramidstr = "";
+        int i = 1;
+        while (i <= maxNumber) {
+            int j = 1;
+            while (j <= i) {
+                
+                pyramidstr = pyramidstr += i;
+                j++;
+            }
+            pyramidstr = pyramidstr + "\n";
+            i++;
+            
+
+            
+            
+
+            
+
+
+        }
+    
+
+        return pyramidstr;
     }
     
  
@@ -64,7 +99,25 @@ public class Assignment {
         // Use string concatenation
         // Numbers/words should be separated by spaces
         // No trailing space at the end
-        return "";
+        String fizzbuzz = "";
+        int i = 1;
+        while(i <= maxNumber) {
+            if (i % 15 == 0) {
+                fizzbuzz = fizzbuzz + " " + "FizzBuzz";
+            } else if (i % 3 == 0) {
+                fizzbuzz = fizzbuzz + " " + "Fizz";
+            } else if (i % 5 == 0) {
+                fizzbuzz = fizzbuzz + " " + "Buzz";
+            } else {
+                
+
+            fizzbuzz = fizzbuzz + " " + i;
+            }
+            i++;
+            
+            
+        }
+        return fizzbuzz;
     }
     
   
